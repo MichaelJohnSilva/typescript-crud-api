@@ -5,5 +5,6 @@
     "user": "root",
     "password": "",
     "database": "myappdb"
-  }
+  },
+  "jwtSecret": "your-secret-key-change-in-production"
 }

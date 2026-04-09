@@ -3,7 +3,7 @@ import Joi from 'joi';
 
 export function validateRequest(
   req: Request,
-  res: Response,   // ✅ ADD THIS
+  res: Response,
   next: NextFunction,
   schema: Joi.ObjectSchema
 ): void {
@@ -16,13 +16,14 @@ export function validateRequest(
   const { error, value } = schema.validate(req.body, options);
 
   if (error) {
+    console.log('Validation error details:', error.details);
     const message = error.details
       .map(d => d.message.replace(/"/g, ''))
       .join(', ');
 
-    // ✅ STOP request immediately
     res.status(400).json({
       message: `Validation error: ${message}`,
+      details: error.details.map(d => d.message)
     });
     return;
   }

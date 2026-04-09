@@ -10,12 +10,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./",
-    "paths": {
-      "_helpers/*": ["src/_helpers/*"],
-      "_middleware/*": ["src/_middleware/*"],
-      "users/*": ["src/users/*"]
-    }
+    "ignoreDeprecations": "6.0"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
